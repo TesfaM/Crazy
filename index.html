@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Request</title>
+    <title>Good Coffee Spot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +13,20 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            flex-direction: column; /* Added to center-align the image */
+        }
+
+        header {
+            text-align: center;
+            background-color: #F4A460; /* Sandy Brown */
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        #headerImage {
+            max-width: 100px;
+            border-radius: 50%;
         }
 
         .container {
@@ -30,6 +44,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 10px;
         }
 
         button:hover {
@@ -47,19 +62,17 @@
             margin: 10px;
             font-size: 18px;
         }
-
-        img {
-            max-width: 100%;
-            border-radius: 50%;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
 
+    <header>
+        <h1>Good Coffee Spot</h1>
+        <img id="headerImage" src="/dd.png" alt="Coffee Cup Image">
+    </header>
+
     <div class="container">
-        <h1>Date Request</h1>
-        <p id="message">Hi Meron 😎! Would you like to go on a date?</p>
+        <p id="message">Hi Meron 😎! Would you like to go to a good coffee spot?</p>
         <input type="text" id="responseInput" placeholder="Enter 'yes' or 'hell yeah'">
         <button onclick="checkResponse()">Submit</button>
 
@@ -69,15 +82,10 @@
                 const messageElement = document.getElementById('message');
 
                 if (responseInput === 'yes' || responseInput === 'hell yeah') {
-                    messageElement.textContent = "Yeah, let's do this! Unfortunately, I can't track your reply. Text me on Insta :)";
+                    messageElement.textContent = "Great choice! Let's plan to meet at the coffee spot.";
                 } else {
-                    messageElement.textContent = "The good part is I can't track the logs :)";
+                    messageElement.textContent = "No worries. Maybe another time. The coffee spot will be waiting for you :)";
                 }
-
-                // Adding an image
-                const img = document.createElement("img");
-                img.src = "dd.png";
-                document.body.appendChild(img);
             }
         </script>
     </div>
