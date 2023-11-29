@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Date Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB; /* Sky Blue */
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #F4A460; /* Sandy Brown */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2E8B57; /* Sea Green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #228B22; /* Forest Green */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Beach Date Request</h1>
+        <p id="message">Hi there! Would you like to go on a date?</p>
+        <input type="text" id="responseInput" placeholder="Enter 'yes' or 'hell yeah'">
+        <button onclick="checkResponse()">Submit</button>
+    </div>
+
+    <script>
+        function checkResponse() {
+            const responseInput = document.getElementById('responseInput').value.toLowerCase();
+            const messageElement = document.getElementById('message');
+
+            if (responseInput === 'yes') {
+                messageElement.textContent = "Great! Let's plan something fun.";
+            } else if (responseInput === 'hell yeah') {
+                messageElement.textContent = "No worries. Maybe another time.";
+            }
+        }
+    </script>
+
+</body>
+</html>
