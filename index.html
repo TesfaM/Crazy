@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +35,24 @@
         button:hover {
             background-color: #228B22; /* Forest Green */
         }
+
+        #responseInput {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #228B22; /* Forest Green */
+        }
+
+        #message {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -45,20 +62,25 @@
         <p id="message">Hi Meron 😎! Would you like to go on a date?</p>
         <input type="text" id="responseInput" placeholder="Enter 'yes' or 'hell yeah'">
         <button onclick="checkResponse()">Submit</button>
-    </div>
 
-    <script>
-        function checkResponse() {
-            const responseInput = document.getElementById('responseInput').value.toLowerCase();
-            const messageElement = document.getElementById('message');
+        <script>
+            function checkResponse() {
+                const responseInput = document.getElementById('responseInput').value.toLowerCase();
+                const messageElement = document.getElementById('message');
 
-            if (responseInput === 'yes') {
-                messageElement.textContent = "Great! Let's plan something fun.";
-            } else if (responseInput === 'hell yeah') {
-                messageElement.textContent = "No worries. Maybe another time.";
+                if (responseInput === 'yes' || responseInput === 'hell yeah') {
+                    messageElement.textContent = "Yeah, let's do this! Unfortunately, I can't track your reply. Text me on Insta :)";
+                } else {
+                    messageElement.textContent = "The good part is I can't track the logs :)";
+                }
+
+                // Adding an image
+                const img = document.createElement("img");
+                img.src = "dd.png";
+                document.body.appendChild(img);
             }
-        }
-    </script>
+        </script>
+    </div>
 
 </body>
 </html>
